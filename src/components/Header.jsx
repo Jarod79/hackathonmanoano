@@ -20,7 +20,7 @@ const Header = () => {
         <img src={Burger} alt="burger" />
         <Link to="/">Menu</Link>
         <Link to="/">Soldes</Link>
-        <Link to="/">Bon PLans</Link>
+        <Link to="/">Bon Plans</Link>
         <Link to="/">Meilleures ventes</Link>
         <Link to="/">Perceuse, visseuse...</Link>
         <Link to="/">Aménagement d'atelier</Link>
