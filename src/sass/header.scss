@@ -1,0 +1,49 @@
+.header {
+  position: fixed;
+  background-color: rgb(253, 253, 253);
+  padding-top: 1.4vh;
+  height: 12vh;
+  width: 100vw;
+  &__firstline {
+    display: flex;
+    & img {
+      margin-left: 9vw;
+      height: 6vh;
+      width: 8vw;
+    }
+    & input {
+      margin-left: 9vw;
+      padding: 0 1.6vw;
+      width: 32.5vw;
+      height: 5vh;
+      border-radius: 160px;
+      background-color: rgb(243, 243, 243);
+    }
+    & p {
+      font-size: 1.6vh;
+      margin-left: 16vw;
+    }
+  }
+
+  &__link {
+    margin: 0 5vw;
+    height: 5vh;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    & a {
+      padding: 0 1vw;
+      text-decoration: none;
+      font-size: 1.8vh;
+      color: darkblue;
+      align-content: center;
+    }
+    & a:hover {
+      text-decoration-line: underline;
+    }
+    & img {
+      width: 2vh;
+      position: absolute;
+    }
+  }
+}

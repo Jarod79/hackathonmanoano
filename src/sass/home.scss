@@ -1,0 +1,8 @@
+.home {
+  display: flex;
+  height: 80vh;
+  & img {
+    width: 98vw;
+    height: 100vh;
+  }
+}
