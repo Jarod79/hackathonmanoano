@@ -28,7 +28,7 @@ const Header = () => {
         />
         <Link to="/">Soldes</Link>
         <Link to="/pack">Bon PLans</Link>
-        <Link to="/">Meilleures ventes</Link>
+        <Link to="/cart">Meilleures ventes</Link>
         <Link to="/">Perceuse, visseuse...</Link>
         <Link to="/">Aménagement d'atelier</Link>
         <Link to="/">Radiateur électrique</Link>
