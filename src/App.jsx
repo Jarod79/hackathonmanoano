@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Pack from "./components/Pack";
 
 import Project from "./components/Project";
+import ProductList from "./components/ProductList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HashRouter>
         <Header />
         <Routes>
+          <Route path="/liste_de_produits" element={<ProductList />} />
           <Route path="/pack" element={<Pack />} />
           <Route path="/projet" element={<Project />} />
           <Route path="/" element={<Home />} />

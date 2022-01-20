@@ -1,0 +1,59 @@
+.product {
+  background-color: rgba(0, 0, 0, 0.808);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  &__back {
+    background-color: rgb(236, 236, 236);
+    padding: 2vh 0;
+    width: 60vw;
+    height: 60vh;
+    margin: 20vh 20vw;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+    &__hide {
+      cursor: pointer;
+      text-align: right;
+      margin-right: 3vw;
+      margin-top: 0;
+      font-size: 3.5vh;
+    }
+    &__total {
+      margin-right: 6vw;
+      display: flex;
+      justify-content: right;
+      & button {
+        border-radius: 15px;
+        margin: 1vh 2vw;
+      }
+    }
+
+    &__card {
+      background-color: white;
+      border: lightgray solid;
+      border-radius: 5px;
+      margin: 1vh 5vw;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      display: flex;
+      width: 50vw;
+      height: 10vh;
+
+      & img {
+        width: 10vh;
+        height: 10vh;
+      }
+      &__paragraph1 {
+        width: 15vw;
+      }
+      &__paragraph2 {
+        width: 20vw;
+      }
+    }
+  }
+}
