@@ -4,9 +4,6 @@ function SideBar() {
   return (
     <div className="golbal-container">
       <nav className="side-nav">
-        {/* <!-- <div class="nav-logo"> --> */}
-        <img src="" alt="" />
-
         <h1 className="budget-total" id="titles-input">
           Budget total
         </h1>
@@ -73,11 +70,6 @@ function SideBar() {
             Jardin Piscine
           </label>
         </div>
-        <div className="separtion"></div>
-        <a href="#" className="bloc-link">
-          <img src="" alt="" />
-        </a>
-        {/* <!-- </div> --> */}
       </nav>
     </div>
   );
