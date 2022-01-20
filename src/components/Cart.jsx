@@ -3,7 +3,6 @@ import axios from "axios";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
-  console.log(products);
 
   useEffect(() => {
     axios
@@ -28,7 +27,7 @@ const Cart = () => {
                 <input type="text" placeholder="1" />
                 <button className="cart__moins1">+</button>
               </div>
-              <label>{product.price}</label>
+              <label className="cart__total_price">{product.price}€</label>
             </div>
           </div>
         ))}

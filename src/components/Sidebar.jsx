@@ -45,24 +45,27 @@ const Sidebar = () => {
           <label htmlFor="categories">
             Dites nous ce dont vous avez besoin
           </label>
-          <select
-            onChange={(e) => setSubcategorySelected(e.target.value)}
-            value={subcategorySelected}
-            className=""
-            name="subcategory"
-            id="categories"
-          >
-            {subcategoriesList.length &&
-              subcategoriesList
-                .filter(
-                  (subcategory) => subcategory.id_category == categorySelected
-                )
-                .map((subcategory, index) => (
-                  <option key={index} value={subcategory.id_subcategory}>
+          {subcategoriesList.length &&
+            subcategoriesList
+              .filter(
+                (subcategory) => subcategory.id_category == categorySelected
+              )
+              .map((subcategory, index) => (
+                <div key={index}>
+                  <input
+                    type="checkbox"
+                    id={subcategory.id_category}
+                    name="check"
+                    value={subcategory.name}
+                    onChange={() =>
+                      setSubcategorySelected(!subcategorySelected)
+                    }
+                  />
+                  <label for={subcategory.id_category}>
                     {subcategory.name}
-                  </option>
-                ))}
-          </select>
+                  </label>
+                </div>
+              ))}
         </div>
       </div>
     </div>
