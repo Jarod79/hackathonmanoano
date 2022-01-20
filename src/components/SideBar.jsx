@@ -2,11 +2,8 @@ import React from "react";
 
 function SideBar() {
   return (
-    <div className="golbal-container">
-      <nav className="side-nav">
-        {/* <!-- <div class="nav-logo"> --> */}
-        <img src="" alt="" />
-
+    <div className="side">
+      <nav className="side__nav">
         <h1 className="budget-total" id="titles-input">
           Budget total
         </h1>

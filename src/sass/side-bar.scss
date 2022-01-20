@@ -1,50 +1,119 @@
-.global-container {
-  display: grid;
-  grid-template-columns: 250px 1fr;
+.side {
+ 
+  /* side bar */
+
+  &__nav { 
+   padding-top: 20px;
+    width: 300px;
+    // height: 100%;
+    border-right: 1px solid rgba(128, 128, 128, 0.158);
+    border-top: 1px solid yellow;
+  
+    background-color: white;
+
+    /* Input/budget total */
+
+     h1 {
+      margin-top: 150px;
+      text-align: center; 
+    }
+
+     input {
+      border-radius: 160px;
+
+
+      }
+
+    /* Thème/projet */
+
+    .thème {
+      text-align: center;
+    }
+
+    /* input */
+
+    #titles-input {
+      padding: 15px;
+    }
+    .budget {
+      margin-left: 35px;
+      width: 67%;
+    }
+
+    /* Checkboxes */
+
+  
+  }
+
 }
-
-/* side bar */
-
-.side-nav {
-  position: fixed;
-  width: 40pxpx;
-  height: 100%;
-  border-right: 1px solid rgba(128, 128, 128, 0.158);
-  background-color: white;
-}
-
-/* Input/budget total */
-
-.budget-total {
-  text-align: center;
-}
-
-/* Thème/projet */
-
-.thème {
-  text-align: center;
-}
-
-/* input */
-
-#titles-input {
-  padding: 15px;
-}
-.budget {
-  margin-left: 35px;
-  width: 67%;
-}
-
-/* Checkboxes */
-
-.catégories {
+.categories {
   display: flex;
   font-weight: 500;
-  color: #0c193a;
-  padding: 20px 50px;
+  color:rgba(0, 0, 0, 0.781) ;
+  padding: 20px 40px;
+  
   text-align: center;
-}
 
-.catégories:hover {
+  input {
+    
+
+  }
+
+
+&:hover {
   background: #f8f8f8;
 }
+}
+
+    // ------------------------------------------------------------------------
+
+    // .sideBar {
+    //   display: grid;
+    //   grid-template-columns: 250px 1fr;
+    // }
+
+    // /* side bar */
+
+    // .side-nav {
+    //   position: relative;
+    //   width: 40pxpx;
+    //   height: 100%;
+    //   border-right: 1px solid rgba(128, 128, 128, 0.158);
+    //   background-color: white;
+    // }
+
+    // /* Input/budget total */
+
+    // .budget-total {
+    //   text-align: center;
+    // }
+
+    // /* Thème/projet */
+
+    // .thème {
+    //   text-align: center;
+    // }
+
+    // /* input */
+
+    // #titles-input {
+    //   padding: 15px;
+    // }
+    // .budget {
+    //   margin-left: 35px;
+    //   width: 67%;
+    // }
+
+    // /* Checkboxes */
+
+    // .catégories {
+    //   display: flex;
+    //   font-weight: 500;
+    //   color: #0c193a;
+    //   padding: 20px 50px;
+    //   text-align: center;
+    // }
+    // .catégories:hover {
+    //   background: #f8f8f8;
+    // }
+ 
