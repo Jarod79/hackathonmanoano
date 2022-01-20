@@ -1,0 +1,35 @@
+.pack {
+  width: 60vw;
+  height: 60vh;
+  background-color: rgb(223, 223, 223);
+  border-radius: 15px;
+  color: #0c193a;
+  margin-bottom: 5vh;
+
+  &__container {
+    height: 40vh;
+    overflow: hidden;
+
+    &__img {
+      vertical-align: baseline;
+      width: 100%;
+      border-radius: 15px 15px 0 0;
+    }
+  }
+
+  &__desc {
+    padding: 20px 20px;
+    font-family: Open Sans, mm-main, arial, sans-serif;
+    &__title {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 17px;
+    }
+    &__price {
+      margin: 0;
+      font-weight: 900;
+      font-size: 28px;
+    }
+  }
+}
