@@ -27,7 +27,7 @@ const Header = () => {
         <a href="/">Bibliothèque et étagère</a>
         <a href="/">Suspension, lustre et accesoires</a>
         <a href="/">Made in italy</a>
-        <a href="/">Votre projet en un click</a>
+        <a href="/projet">Votre projet en un click</a>
       </div>
     </div>
   );
