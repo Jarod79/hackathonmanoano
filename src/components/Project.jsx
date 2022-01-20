@@ -1,3 +1,4 @@
+import Sidebar from "./Sidebar";
 import React, { useEffect, useState } from "react";
 import Pack from "./Pack";
 import axios from "axios";
@@ -140,21 +141,19 @@ const Project = () => {
       });
   }, [idSubcategory, idCategory]);
 
-  // console.log(pack1);
-  console.log(allProducts);
-  // console.log(categories);
-  // console.log(subcategories);
-
   return (
-    <div>
-      <button onClick={() => setIdCategory(1)}>category</button>
-      <button onClick={() => setIdSubcategory(3)}>subcategory</button>
-      <h2>Premier prix</h2>
-      {pack1 && <Pack {...pack1} />}
-      <h2>Meilleur rapport qualité/prix</h2>
-      {pack2 && <Pack {...pack2} />}
-      <h2>Top qualité</h2>
-      {pack3 && <Pack {...pack3} />}
+    <div className="project">
+      <div className="project__sidebar">
+        <Sidebar />
+      </div>
+      <div className="project__pack">
+        <h2>Premier prix</h2>
+        {pack1 && <Pack {...pack1} />}
+        <h2>Meilleur rapport qualité/prix</h2>
+        {pack2 && <Pack {...pack2} />}
+        <h2>Top qualité</h2>
+        {pack3 && <Pack {...pack3} />}
+      </div>
     </div>
   );
 };
