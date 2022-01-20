@@ -6,10 +6,16 @@
   width: 100vw;
   &__firstline {
     display: flex;
-    & img {
+    &__mano {
       margin-left: 9vw;
       height: 6vh;
       width: 8vw;
+    }
+    &__cart {
+      margin-left: 4vw;
+      margin-top: 2vh;
+      width: 3vh;
+      height: 3vh;
     }
     & input {
       margin-left: 9vw;
@@ -41,7 +47,12 @@
     & a:hover {
       text-decoration-line: underline;
     }
-    & img {
+    &__burger {
+      width: 2vh;
+      position: absolute;
+    }
+    &__soldes {
+      left: 9vw;
       width: 2vh;
       position: absolute;
     }
