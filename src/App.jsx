@@ -2,6 +2,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Pack from "./components/Pack";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <Pack />
       </HashRouter>
     </div>
   );
