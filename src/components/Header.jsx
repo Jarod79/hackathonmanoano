@@ -1,5 +1,6 @@
 import Mano from "../assets/mano.png";
 import Burger from "../assets/burger.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -17,17 +18,17 @@ const Header = () => {
       </div>
       <div className="header__link">
         <img src={Burger} alt="burger" />
-        <a href="/">Menu</a>
-        <a href="/">Soldes</a>
-        <a href="/">Bon PLans</a>
-        <a href="/">Meilleures ventes</a>
-        <a href="/">Perceuse, visseuse...</a>
-        <a href="/">Aménagement d'atelier</a>
-        <a href="/">Radiateur électrique</a>
-        <a href="/">Bibliothèque et étagère</a>
-        <a href="/">Suspension, lustre et accesoires</a>
-        <a href="/">Made in italy</a>
-        <a href="/">Votre projet en un click</a>
+        <Link to="/">Menu</Link>
+        <Link to="/">Soldes</Link>
+        <Link to="/">Bon PLans</Link>
+        <Link to="/">Meilleures ventes</Link>
+        <Link to="/">Perceuse, visseuse...</Link>
+        <Link to="/">Aménagement d'atelier</Link>
+        <Link to="/">Radiateur électrique</Link>
+        <Link to="/">Bibliothèque et étagère</Link>
+        <Link to="/">Suspension, lustre et accesoires</Link>
+        <Link to="/">Made in italy</Link>
+        <Link to="/projet">Votre projet en un click</Link>
       </div>
     </div>
   );
