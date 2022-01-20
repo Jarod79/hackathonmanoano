@@ -13,7 +13,7 @@ function App() {
       <HashRouter>
         <Header />
         <Routes>
-          <Route path="/pack" element={<Pack />} />
+          {/* <Route path="/pack" element={<Pack />} /> */}
           <Route path="/projet" element={<Project />} />
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
