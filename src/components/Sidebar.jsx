@@ -16,28 +16,29 @@ const Sidebar = () => {
       .then((res) => setSubcategoriesList(res.data));
   }, []);
 
-  console.log(subcategoriesList);
-  console.log(categorySelected);
-
   return (
     <div className="sidebar">
       <div className="sidebar__container">
-        <h2 className="sidebar__container__h2">Composez votre pack</h2>
+        <h2 className="sidebar__container__h2">
+          Trouvez le pack répondant à vos envies
+        </h2>
         <div className="siderbar__container__item">
           <label
             className="sidebar__container__item__label"
             htmlFor="categories"
           >
-            Selectionnez votre categorie
+            Sélectionnez une catégorie :
           </label>
           <select
-            onChange={(e) => setCategorySelected(e.target.value)}
+            onChange={(e) => {
+              setCategorySelected(e.target.value);
+            }}
             value={categorySelected}
             className=""
             name="categories"
             id="categories"
           >
-            <option value="">---</option>
+            <option value="">Votre projet</option>
             {categoriesList.length &&
               categoriesList.map((category, index) => (
                 <option key={index} value={category.id_category}>
@@ -46,10 +47,8 @@ const Sidebar = () => {
               ))}
           </select>
         </div>
-        <div className="siderbar__item">
-          <label htmlFor="categories">
-            Dites nous ce dont vous avez besoin
-          </label>
+        <div className="sidebar__item">
+          <label htmlFor="categories">Précisez-nous votre besoin :</label>
           {subcategoriesList.length &&
             subcategoriesList
               .filter(

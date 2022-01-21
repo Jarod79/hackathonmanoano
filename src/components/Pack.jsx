@@ -8,7 +8,7 @@ const Pack = ({ title, picture, price }) => {
       </div>
 
       <div className="pack__desc">
-        <h4 className="pack__desc__title">{title}</h4>
+        <h3 className="pack__desc__title">{title}</h3>
         <h3 className="pack__desc__price">{price}€</h3>
       </div>
     </div>

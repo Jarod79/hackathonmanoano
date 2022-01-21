@@ -12,6 +12,7 @@ const Project = () => {
   const [pack1, setPack1] = useState([]);
   const [pack2, setPack2] = useState([]);
   const [pack3, setPack3] = useState([]);
+  const [showDescription, setShowDescription] = useState(true);
 
   const packConstructor = (allProducts) => {
     let pack1 = [];
@@ -146,13 +147,23 @@ const Project = () => {
       <div className="project__sidebar">
         <Sidebar />
       </div>
+
       <div className="project__pack">
-        <h2>Premier prix</h2>
-        {pack1 && <Pack {...pack1} />}
-        <h2>Meilleur rapport qualité/prix</h2>
-        {pack2 && <Pack {...pack2} />}
-        <h2>Top qualité</h2>
-        {pack3 && <Pack {...pack3} />}
+        <h1>C'est noté ! Voilà ce qu'on vous propose</h1>
+        <div className="project__pack_subcontainer">
+          <div className="project__pack1">
+            <h2>Pour les petits budgets</h2>
+            {pack1 && <Pack {...pack1} />}
+          </div>
+          <div className="project__pack2">
+            <h2>Meilleur rapport qualité/prix</h2>
+            {pack2 && <Pack {...pack2} />}
+          </div>
+          <div className="project__pack3">
+            <h2>Top de la qualité</h2>
+            {pack3 && <Pack {...pack3} />}
+          </div>
+        </div>
       </div>
     </div>
   );

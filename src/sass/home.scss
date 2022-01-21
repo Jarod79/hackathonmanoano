@@ -5,4 +5,28 @@
     width: 98vw;
     height: 100vh;
   }
+
+  &__description {
+    h1,
+    h2,
+    p {
+      font-family: "Open Sans", arial, sans-serif;
+      text-align: left;
+      color: #0c193a;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
 }

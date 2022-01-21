@@ -1,14 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
 .pack {
   width: 60vw;
-  height: 60vh;
-  background-color: rgb(223, 223, 223);
-  border-radius: 15px;
+  height: 40vh;
+  background-color: #dfdfdf;
+  border-radius: 4px;
   color: #0c193a;
   margin-bottom: 5vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 13px -2px,
+    rgba(0, 0, 0, 0.3) 0px 4px 8px -4px;
+  transition: 0.5s;
 
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 13px -2px,
+      rgba(0, 0, 0, 0.3) 0px 4px 13px -4px;
+  }
   &__container {
-    height: 40vh;
+    height: 77%;
     overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    background-color: blue;
 
     &__img {
       vertical-align: baseline;
@@ -18,18 +29,17 @@
   }
 
   &__desc {
-    padding: 20px 20px;
-    font-family: Open Sans, mm-main, arial, sans-serif;
+    height: 20%;
+    font-family: "Open Sans", arial, sans-serif;
     &__title {
-      margin-top: 0;
-      margin-bottom: 10px;
+      padding-left: 10px;
       font-weight: 600;
       font-size: 17px;
     }
     &__price {
-      margin: 0;
+      padding-left: 10px;
       font-weight: 900;
-      font-size: 28px;
+      font-size: 17px;
     }
   }
 }
