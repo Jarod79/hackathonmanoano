@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
-
+import Pack from "./components/Pack";
 import Project from "./components/Project";
 import ProductList from "./components/ProductList";
 

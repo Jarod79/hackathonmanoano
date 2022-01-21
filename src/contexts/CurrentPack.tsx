@@ -1,7 +1,5 @@
 import React, { createContext, useState } from "react";
 
-type Props = { children: Element };
-
 const CurrentPackContext = createContext({
   idCategory: {},
   setIdCategory: () => {},
@@ -9,7 +7,7 @@ const CurrentPackContext = createContext({
   setIdSubCategory: () => {},
 });
 
-export const CurrentPackContextProvider: React.FC<Props> = ({ children }) => {
+export const CurrentPackContextProvider = ({ children }) => {
   const [idCategory, setIdCategory] = useState();
   const [idSubCategoey, setIdSubCategory] = useState();
 
