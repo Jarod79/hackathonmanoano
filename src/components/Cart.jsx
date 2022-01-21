@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useContext, useEffect } from "react";
+import CurrentPackContext from "../contexts/CurrentPack";
+import axios from "axios";
 
 const Cart = () => {
-  const [products, setProducts] = useState([]);
+  const { idPack, products } = useContext(CurrentPackContext);
+
+  useEffect(() => {
+    idPack != undefined &&
+      axios
+        .get(`http://localhost:4000/api/products/packs/${idPack}`)
+        .then((res) => setProductList(res.data));
+  }, []);
 
   return (
     <div className="cart">

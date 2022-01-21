@@ -1,5 +1,6 @@
 import Sidebar from "./Sidebar";
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Pack from "./Pack";
 import axios from "axios";
 import CurrentPackContext from "../contexts/CurrentPack";
@@ -12,7 +13,8 @@ const Project = () => {
   const [pack2, setPack2] = useState([]);
   const [pack3, setPack3] = useState([]);
 
-  const { idCategory, idSubCategory } = useContext(CurrentPackContext);
+  const { idCategory, idSubCategory, setIdPack } =
+    useContext(CurrentPackContext);
 
   const packConstructor = (allProducts) => {
     let pack1 = [];
@@ -149,11 +151,17 @@ const Project = () => {
       </div>
       <div className="project__pack">
         <h2>Premier prix</h2>
-        {pack1 && <Pack {...pack1} />}
+        <Link to="/liste_de_produits" onClick={() => setIdPack(1)}>
+          {pack1 && <Pack {...pack1} />}
+        </Link>
         <h2>Meilleur rapport qualité/prix</h2>
-        {pack2 && <Pack {...pack2} />}
+        <Link to="/liste_de_produits" onClick={() => setIdPack(2)}>
+          {pack2 && <Pack {...pack2} />}
+        </Link>
         <h2>Top qualité</h2>
-        {pack3 && <Pack {...pack3} />}
+        <Link to="/liste_de_produits" onClick={() => setIdPack(3)}>
+          {pack3 && <Pack {...pack3} />}
+        </Link>
       </div>
     </div>
   );

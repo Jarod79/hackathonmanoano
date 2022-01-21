@@ -3,8 +3,6 @@ import CurrentPackContext from "../contexts/CurrentPack";
 import axios from "axios";
 
 const Sidebar = () => {
-  // const [idCategory, setIdCategory] = useState("");
-  // const [idSubCategory, setIdSubCategory] = useState("");
   const [categoriesList, setCategoriesList] = useState([]);
   const [subcategoriesList, setSubcategoriesList] = useState([]);
 
@@ -17,11 +15,8 @@ const Sidebar = () => {
       .then((res) => setCategoriesList(res.data));
     axios
       .get(`http://localhost:4000/api/subcategories`)
-      .then((res) => setSubcategoriesList(res.data));
+      .then((res) => console.log(setSubcategoriesList(res.data)));
   }, []);
-
-  console.log(idCategory);
-  console.log(idSubCategory);
 
   return (
     <div className="sidebar">
