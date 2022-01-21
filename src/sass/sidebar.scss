@@ -1,0 +1,17 @@
+.sidebar {
+  background-color: rgb(241, 241, 241);
+  padding: 1rem 1rem;
+  border-radius: 15px;
+  &__container {
+    &__h2 {
+    }
+    &__item {
+      &__label {
+        padding-bottom: 10rem;
+      }
+    }
+  }
+  &__item {
+    margin-bottom: 1rem;
+  }
+}
