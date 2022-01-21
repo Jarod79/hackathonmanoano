@@ -9,14 +9,14 @@ const CurrentPackContext = createContext({
 
 export const CurrentPackContextProvider = ({ children }) => {
   const [idCategory, setIdCategory] = useState();
-  const [idSubCategoey, setIdSubCategory] = useState();
+  const [idSubCategory, setIdSubCategory] = useState();
 
   return (
     <CurrentPackContext.Provider
       value={{
         idCategory,
         setIdCategory,
-        idSubCategoey,
+        idSubCategory,
         setIdSubCategory,
       }}
     >

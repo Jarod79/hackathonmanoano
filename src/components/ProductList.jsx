@@ -1,16 +1,17 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import CurrentPackContext from "../contexts/CurrentPack";
 
 const ProductList = () => {
   const [productList, setProductList] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [idSubCategory, setSubCategory] = useState(3);
   const [hideShow, setHideShow] = useState(true);
+
+  const { idSubCategory } = useContext(CurrentPackContext);
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/products/packs/1")
+      .get(`http://localhost:4000/api/products/packs/${idSubCategory}`)
       .then((res) => setProductList(res.data));
   }, []);
 
