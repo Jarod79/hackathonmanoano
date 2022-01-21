@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import CurrentPackContext from "../contexts/CurrentPack";
 import axios from "axios";
 
 const Sidebar = () => {
-  const [categorySelected, setCategorySelected] = useState("");
-  const [subcategorySelected, setSubcategorySelected] = useState("");
   const [categoriesList, setCategoriesList] = useState([]);
   const [subcategoriesList, setSubcategoriesList] = useState([]);
+
+  const { idCategory, setIdCategory, idSubCategory, setIdSubCategory } =
+    useContext(CurrentPackContext);
 
   useEffect(() => {
     axios
@@ -13,11 +15,8 @@ const Sidebar = () => {
       .then((res) => setCategoriesList(res.data));
     axios
       .get(`http://localhost:4000/api/subcategories`)
-      .then((res) => setSubcategoriesList(res.data));
+      .then((res) => console.log(setSubcategoriesList(res.data)));
   }, []);
-
-  console.log(subcategoriesList);
-  console.log(categorySelected);
 
   return (
     <div className="sidebar">
@@ -31,8 +30,8 @@ const Sidebar = () => {
             Selectionnez votre categorie
           </label>
           <select
-            onChange={(e) => setCategorySelected(e.target.value)}
-            value={categorySelected}
+            onChange={(e) => setIdCategory(e.target.value)}
+            value={idCategory}
             className=""
             name="categories"
             id="categories"
@@ -52,21 +51,17 @@ const Sidebar = () => {
           </label>
           {subcategoriesList.length &&
             subcategoriesList
-              .filter(
-                (subcategory) => subcategory.id_category == categorySelected
-              )
+              .filter((subcategory) => subcategory.id_category == idCategory)
               .map((subcategory, index) => (
                 <div key={index}>
                   <input
                     type="checkbox"
-                    id={subcategory.id_category}
+                    id={subcategory.id_subcategory}
                     name="check"
-                    value={subcategory.name}
-                    onChange={() =>
-                      setSubcategorySelected(!subcategorySelected)
-                    }
+                    value={subcategory.id_subcategory}
+                    onChange={(e) => setIdSubCategory(e.target.value)}
                   />
-                  <label for={subcategory.id_category}>
+                  <label for={subcategory.id_subcategory}>
                     {subcategory.name}
                   </label>
                 </div>

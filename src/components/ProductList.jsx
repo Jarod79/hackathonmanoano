@@ -1,30 +1,33 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import CurrentPackContext from "../contexts/CurrentPack";
+import axios from "axios";
 
 const ProductList = () => {
-  const [productList, setProductList] = useState([]);
-  const [cart, setCart] = useState([]);
-  const [idSubCategory, setSubCategory] = useState(3);
   const [hideShow, setHideShow] = useState(true);
+  const [productList, setProductList] = useState([]);
+  const { idPack, setProducts, products } = useContext(CurrentPackContext);
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/products/packs/1")
-      .then((res) => setProductList(res.data));
+      .get(`http://localhost:4000/api/products/packs/${idPack}`)
+      .then((res) => {
+        setProductList(res.data);
+        setProducts(res.data);
+      });
   }, []);
 
   let pack1 = [];
-  pack1 = productList.filter(
-    (product) => product.id_subcategory === idSubCategory
-  );
+  pack1 = productList.filter((product) => product.id_subcategory === idPack);
   let pack1Price = [];
   pack1Price = pack1.map((product) => Number(product.price));
   const reducer = (previousValue, currentValue) => previousValue + currentValue;
   pack1Price = pack1Price.reduce(reducer, 0);
+
   const handleClick = () => {
     setHideShow(false);
   };
+
   return (
     <>
       {hideShow && (
@@ -48,7 +51,7 @@ const ProductList = () => {
             </div>
             {productList.length &&
               productList
-                .filter((el) => el.id_subcategory === idSubCategory)
+                .filter((el) => el.id_subcategory === idPack)
                 .map((el, index) => (
                   <div className="product__back__card" key={index}>
                     <img src={el.picture} alt={el.name} />
