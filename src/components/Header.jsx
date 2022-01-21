@@ -16,7 +16,9 @@ const Header = () => {
           Bonjour
           <br /> Identifiez-vous
         </p>
-        <img src={Cart} alt="cart" className="header__firstline__cart" />
+        <Link to="/cart">
+          <img src={Cart} alt="cart" className="header__firstline__cart" />
+        </Link>
       </div>
       <div className="header__link">
         <img src={Burger} alt="burger" className="header__link__burger" />
@@ -27,7 +29,7 @@ const Header = () => {
           className="header__link__soldes"
         />
         <Link to="/">Soldes</Link>
-        <Link to="/">Bon PLans</Link>
+        <Link to="/">Bon Plans</Link>
         <Link to="/">Meilleures ventes</Link>
         <Link to="/">Perceuse, visseuse...</Link>
         <Link to="/">Aménagement d'atelier</Link>
