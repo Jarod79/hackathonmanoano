@@ -66,7 +66,7 @@ const ProductList = () => {
               <button>
                 <Link to="/cart">Valider la commande</Link>
               </button>
-              <p>TOTAL: {pack1Price}€ </p>
+              <p>Total : {pack1Price}€ </p>
             </div>
           </div>
         </div>

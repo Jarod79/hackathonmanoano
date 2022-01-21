@@ -3,7 +3,7 @@
 .pack {
   width: 60vw;
   height: 40vh;
-  background-color: #dfdfdf;
+  background-color: #f1f7fa;
   border-radius: 4px;
   color: #0c193a;
   margin-bottom: 5vh;
@@ -30,6 +30,7 @@
   &__desc {
     height: 20%;
     font-family: "Open Sans", arial, sans-serif;
+
     &__title {
       padding-left: 10px;
       font-weight: 600;

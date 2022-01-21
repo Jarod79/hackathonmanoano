@@ -22,6 +22,7 @@ const Home = () => {
           <strong>À vos marteaux, prêts ? Partez ! 🔨</strong>
         </p>
       </div>
+      <button>Commencer dès maintenant !</button>
     </div>
   );
 };

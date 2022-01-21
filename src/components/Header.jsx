@@ -13,8 +13,8 @@ const Header = () => {
           placeholder="Rechercher un produit, une marque ou un conseil"
         />
         <p>
-          Bonjour
-          <br /> Identifiez-vous
+          Bonjour,
+          <br /> identifiez-vous
         </p>
         <Link to="/cart">
           <img src={Cart} alt="cart" className="header__firstline__cart" />
@@ -29,15 +29,15 @@ const Header = () => {
           className="header__link__soldes"
         />
         <Link to="/">Soldes</Link>
-        <Link to="/">Bon Plans</Link>
+        <Link to="/">Bon plans</Link>
         <Link to="/">Meilleures ventes</Link>
         <Link to="/">Perceuse, visseuse...</Link>
         <Link to="/">Aménagement d'atelier</Link>
         <Link to="/">Radiateur électrique</Link>
         <Link to="/">Bibliothèque et étagère</Link>
-        <Link to="/">Suspension, lustre et accesoires</Link>
-        <Link to="/">Made in italy</Link>
-        <Link to="/projet">Votre projet en un click</Link>
+        <Link to="/">Suspension, lustre et accessoires</Link>
+        <Link to="/">Made in Italy</Link>
+        <Link to="/projet">Votre projet en un clic</Link>
       </div>
     </div>
   );

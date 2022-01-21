@@ -14,14 +14,14 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h2 className="cart__title">Panier</h2>
+      <h2 className="cart__title">Votre panier</h2>
       {products &&
         products.map((product) => (
           <div className="cart__product" key={product.id_product}>
             <img className="cart__img" src={product.picture} />
             <div className="cart__center">
               <h2 className="cart__product_name">{product.name}</h2>
-              <button className="cart__delete_item">supprimer</button>
+              <button className="cart__delete_item">Supprimer</button>
             </div>
             <div className="cart__quantity_price">
               <div className="cart__add">
