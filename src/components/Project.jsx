@@ -1,18 +1,21 @@
 import Sidebar from "./Sidebar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Pack from "./Pack";
 import axios from "axios";
+import CurrentPackContext from "../contexts/CurrentPack";
 
 const Project = () => {
   const [categories, setCategories] = useState([]);
   const [subcategories, setSubcategories] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [idCategory, setIdCategory] = useState();
-  const [idSubcategory, setIdSubcategory] = useState();
   const [pack1, setPack1] = useState([]);
   const [pack2, setPack2] = useState([]);
   const [pack3, setPack3] = useState([]);
   const [showDescription, setShowDescription] = useState(true);
+
+  const { idCategory, idSubCategory, setIdPack } =
+    useContext(CurrentPackContext);
 
   const packConstructor = (allProducts) => {
     let pack1 = [];
@@ -25,13 +28,13 @@ const Project = () => {
     const reducer = (previousValue, currentValue) =>
       previousValue + currentValue;
     pack1Price = pack1Price.reduce(reducer, 0);
-    if (idSubcategory) {
+    if (idSubCategory) {
       const pack1Object = {
         title: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         )?.name,
         picture: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         ).picture,
         price: pack1Price,
       };
@@ -52,13 +55,13 @@ const Project = () => {
     let pack2Price = [];
     pack2Price = pack2.map((product) => parseInt(product.price));
     pack2Price = pack2Price.reduce(reducer, 0);
-    if (idSubcategory) {
+    if (idSubCategory) {
       const pack2Object = {
         title: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         )?.name,
         picture: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         ).picture,
         price: pack2Price,
       };
@@ -79,13 +82,13 @@ const Project = () => {
     let pack3Price = [];
     pack3Price = pack3.map((product) => parseInt(product.price));
     pack3Price = pack3Price.reduce(reducer, 0);
-    if (idSubcategory) {
+    if (idSubCategory) {
       const pack3Object = {
         title: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         )?.name,
         picture: subcategories.find(
-          (subcategory) => subcategory.id_subcategory == idSubcategory
+          (subcategory) => subcategory.id_subcategory == idSubCategory
         ).picture,
         price: pack3Price,
       };
@@ -127,10 +130,10 @@ const Project = () => {
       basicUrl += `?idcategory=${idCategory}`;
       changedValue = true;
     }
-    if (idSubcategory !== undefined) {
+    if (idSubCategory !== undefined) {
       basicUrl += changedValue
-        ? `&idsubcategory=${idSubcategory}`
-        : `?idsubcategory=${idSubcategory}`;
+        ? `&idsubcategory=${idSubCategory}`
+        : `?idsubcategory=${idSubCategory}`;
     }
 
     axios
@@ -140,28 +143,33 @@ const Project = () => {
         setAllProducts(product);
         packConstructor(product);
       });
-  }, [idSubcategory, idCategory]);
+  }, [idSubCategory, idCategory]);
 
   return (
     <div className="project">
       <div className="project__sidebar">
         <Sidebar />
       </div>
-
       <div className="project__pack">
         <h1>C'est noté ! Voilà ce qu'on vous propose</h1>
         <div className="project__pack_subcontainer">
           <div className="project__pack1">
             <h2>Pour les petits budgets</h2>
-            {pack1 && <Pack {...pack1} />}
+            <Link to="/liste_de_produits" onClick={() => setIdPack(1)}>
+              {pack1 && <Pack {...pack1} />}
+            </Link>
           </div>
           <div className="project__pack2">
             <h2>Meilleur rapport qualité/prix</h2>
-            {pack2 && <Pack {...pack2} />}
+            <Link to="/liste_de_produits" onClick={() => setIdPack(2)}>
+              {pack2 && <Pack {...pack2} />}
+            </Link>
           </div>
           <div className="project__pack3">
             <h2>Top de la qualité</h2>
-            {pack3 && <Pack {...pack3} />}
+            <Link to="/liste_de_produits" onClick={() => setIdPack(3)}>
+              {pack3 && <Pack {...pack3} />}
+            </Link>
           </div>
         </div>
       </div>
