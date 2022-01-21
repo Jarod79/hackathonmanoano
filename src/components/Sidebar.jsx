@@ -22,9 +22,14 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__container">
-        <h2>Composez votre pack</h2>
-        <div className="siderbar__item">
-          <label htmlFor="categories">Selectionnez votre categorie</label>
+        <h2 className="sidebar__container__h2">Composez votre pack</h2>
+        <div className="siderbar__container__item">
+          <label
+            className="sidebar__container__item__label"
+            htmlFor="categories"
+          >
+            Selectionnez votre categorie
+          </label>
           <select
             onChange={(e) => setCategorySelected(e.target.value)}
             value={categorySelected}

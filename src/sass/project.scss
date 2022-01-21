@@ -2,5 +2,13 @@
   padding-top: 13vh;
   display: flex;
   height: 87vh;
-  color: blue;
+  font-family: Open Sans, mm-main, arial, sans-serif;
+  &__sidebar {
+    color: #0c193a;
+  }
+  &__pack {
+    color: #0c193a;
+    text-align: end;
+    margin-left: 3rem;
+  }
 }
