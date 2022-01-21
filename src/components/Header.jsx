@@ -36,7 +36,7 @@ const Header = () => {
         <Link to="/">Radiateur électrique</Link>
         <Link to="/">Bibliothèque et étagère</Link>
         <Link to="/">Suspension, lustre et accesoires</Link>
-        <Link to="/">Made in italy</Link>
+        <Link to="/liste_de_produits">Made in italy</Link>
         <Link to="/projet">Votre projet en un click</Link>
       </div>
     </div>

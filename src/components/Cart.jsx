@@ -1,14 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000/api/products/packs/1")
-      .then((responce) => setProducts(responce.data));
-  }, []);
 
   return (
     <div className="cart">
